@@ -2,27 +2,29 @@
 
 ## 1. Status Summary
 
-- **Phase:** Planning & Initial Setup
-- **Overall Health:** Not started (0% coverage)
+- **Phase:** Initial Implementation
+- **Overall Health:** Started (5% coverage)
 - **Strategy:** TDD-driven with emphasis on E2E > Integration > Unit priority
 - **Tooling:** Bun test runner for unit/integration tests
 
-## 2. Coverage Metrics (Placeholders)
+## 2. Coverage Metrics
 
-- **E2E:** 0% | **Integration:** 0% | **Unit:** 0%
+- **E2E:** 0% | **Integration:** 0% | **Unit:** 10%
 - **Test Scenario Documentation Status:**
   - E2E: Initial scenarios documented
   - Integration: Initial scenarios documented
   - Unit: Initial functions/behaviors documented
 
 - **Test Implementation Status:**
-  - All tests: Not yet implemented
+  - Unit Tests: Rule creation and composition tests implemented
+  - Integration Tests: Not yet implemented
+  - E2E Tests: Not yet implemented
 
 ## 3. Key Focus Areas / Next Steps
 
 ### Rule Testing Framework
 
-First priority is implementing the rule testing framework (`testRule` function) that will be used for all rule tests:
+Next priority is implementing the rule testing framework (`testRule` function) that will be used for all rule tests:
 
 ```typescript
 testRule(myCustomRule, {
@@ -46,23 +48,23 @@ testRule(myCustomRule, {
 
 ### Unit Test Implementation Plan
 
-1. **Configuration Loader Tests**
-   - Loading from various locations
-   - Validation of schema
-   - Default value application
-   - Extending configurations
-
-2. **Rule Creation Tests**
-   - Basic rule creation
-   - Rule metadata validation
-   - Visitor pattern implementation
-   - Rule context access
-
-3. **AST Parser/Traversal Tests**
+1. **AST Parser/Traversal Tests**
    - Parsing different node types
    - Visitor pattern execution
    - Scope analysis functionality
    - Type inference capabilities
+
+2. **Rule Context Tests**
+   - Context creation and passing
+   - Report method functionality
+   - Source code access
+   - Options handling
+
+3. **Configuration Loader Tests**
+   - Loading from various locations
+   - Validation of schema
+   - Default value application
+   - Extending configurations
 
 ### Integration Test Implementation Plan
 
@@ -82,3 +84,8 @@ testRule(myCustomRule, {
 - **Test Data Management**: Create fixtures for common test cases
 - **Rule Testing Specificity**: Ensure tests verify both syntax tree matching and semantic analysis
 - **Performance Testing**: Need to establish benchmarks for performance comparison
+
+## 5. Completed Tests
+
+- **Rule Creation Factory**: Unit tests for rule creation with proper metadata validation
+- **Rule Composition**: Unit tests for combining multiple rules with visitor conflict resolution

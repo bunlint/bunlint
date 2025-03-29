@@ -38,7 +38,6 @@ export default [
     rules: {
       // TypeScript specific rules
       '@typescript-eslint/no-explicit-any': 'error',
-      '@typescript-eslint/explicit-function-return-type': 'warn',
       '@typescript-eslint/no-unused-vars': ['error', { 'argsIgnorePattern': '^_' }],
       '@typescript-eslint/no-non-null-assertion': 'error',
       '@typescript-eslint/no-empty-function': 'warn',
@@ -60,12 +59,12 @@ export default [
       'custom-rules/no-class-inheritance': 'error',
       
       // Temporarily disable problematic rules
-      'custom-rules/no-test-mocks': 'off',
-      'custom-rules/enforce-functional-composition': 'off',
-      'custom-rules/no-unused-exports': 'off',
-      'custom-rules/only-test-exports': 'off',
-      'custom-rules/require-test-file': 'off',
-      'custom-rules/no-blank-files': 'error',
+      'custom-rules/no-test-mocks': 'error',
+      'custom-rules/enforce-functional-composition': 'error',
+      'custom-rules/no-unused-exports': 'warn',
+      'custom-rules/only-test-exports': 'warn',
+      'custom-rules/require-test-file': 'warn',
+      'custom-rules/no-blank-files': 'warn',
     },
   },
   {
@@ -73,7 +72,7 @@ export default [
     files: ['**/*.test.ts', '**/*.test.tsx', '**/__tests__/**/*.ts', '**/__tests__/**/*.tsx'],
     rules: {
       // Disable certain rules in test files
-      'custom-rules/no-comments': 'off',
+      'custom-rules/no-comments': 'error',
     },
   },
   {

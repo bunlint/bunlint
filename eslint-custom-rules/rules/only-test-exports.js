@@ -376,15 +376,6 @@ module.exports = {
     const indexFileRegex = /index\.(ts|js|tsx|jsx)$/;
     const apiFileRegex = /api|service|client|controller|router|handler/i;
     
-    // Cache the result of shouldIgnoreFile for this file - compute only once
-    const shouldIgnoreCurrentFile = shouldIgnoreFile();
-    
-    // Cache the result of isTestFile for this file - compute only once
-    const isTestFile = isCurrentFileTestFile();
-
-    // Record this file's test status in the global tracker
-    globalTracker.recordTestFile(filename, isTestFile);
-
     // Helper to check if this is a test file
     function isCurrentFileTestFile() {
       for (const regex of testRegexes) {
@@ -397,6 +388,9 @@ module.exports = {
       return false;
     }
 
+    // Cache the result of isTestFile for this file - compute only once
+    const isTestFile = isCurrentFileTestFile();
+    
     // Helper to check if we should ignore this file
     function shouldIgnoreFile() {
       // Skip type definition files
@@ -449,6 +443,11 @@ module.exports = {
 
       return false;
     }
+
+    const shouldIgnoreCurrentFile = shouldIgnoreFile();
+
+    // Record this file's test status in the global tracker
+    globalTracker.recordTestFile(filename, isTestFile);
 
     // Check if a name matches any of the ignore patterns
     function shouldIgnoreName(name) {
