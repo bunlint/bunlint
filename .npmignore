@@ -1,0 +1,34 @@
+# Source code
+src/
+test/
+sample/
+
+# Development files
+.gitignore
+.cursor/
+.clinerules
+.windsurfrules
+tsconfig.json
+bunlint.config.ts
+bunlint.config.json
+bun.lock
+
+# Don't publish source TypeScript files
+*.ts
+!*.d.ts
+!dist/**/*
+
+# CI/CD
+.github/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo 

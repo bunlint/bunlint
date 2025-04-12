@@ -1,0 +1,18 @@
+You have to follow this 1-14 rules;
+## Do:
+1. Write all code in a single `core.ts` file. everything else only for *.test.ts files
+2. Strictly follow [bunlint-doc.md](mdc:bunlint-doc.md) requirements
+3. Use functional programming techniques exclusively
+4. Maintain immutability throughout
+5. Implement e2e tests for all features with real CLI interactions and file operations
+6. Ensure all changes pass `bun test`
+7. Write isolated test cases using bun:test without mocks
+8. Create challenging, thorough test cases that fully verify implementation
+9. Use DRY principle in core.ts
+
+## Don't:
+10. Avoid OOP, classes, or inheritance
+11. Avoid traditional methods (use higher order functions instead)
+12 Don't write comments
+13. Don't use `any` or `unknown` types
+14. Do not create code of simulation, stub, mock, etc. you should produce code of real expected features
